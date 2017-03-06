@@ -40,7 +40,7 @@
       }
     },
     created () {
-      fetch('/queues').then(queues => {
+      fetch('http://server-mock.com/queues').then(queues => {
         console.info(queues)
         this.queues = queues
       }).catch(err => {
