@@ -22,8 +22,9 @@
       <ul>
         <li><a href="https://github.com/hal0gen/vue-foundation" target="_blank">VueJS + Foundation</a></li>
         <li><a href="https://vuejs.org/v2/guide/" target="_blank">VueJS</a></li>
-        <li><a href="http://foundation.zurb.com/sites/docs" target="_blank">Foundation</a></li>
         <li><a href="https://github.com/outbrain/Leonardo" target="_blank">Leonardo JS</a></li>
+        <li><a href="http://foundation.zurb.com/sites/docs" target="_blank">Foundation</a></li>
+        <li><a href="http://element.eleme.io/" target="_blank">UI Library</a></li>
       </ul>
     </div>
   </div>

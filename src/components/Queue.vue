@@ -26,7 +26,7 @@
           <div class="tabs-panel" id="panel1">
             <el-card class="box-card">
               <div slot="header" class="clearfix">
-                <span style="line-height: 36px;">Card name</span>
+                <span style="line-height: 36px;">Job name</span>
                 <el-button style="float: right;" type="danger">Cancel</el-button>
               </div>
               <div v-for="o in 4" class="text item">

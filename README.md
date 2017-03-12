@@ -1,6 +1,6 @@
-# vue-foundation
+# RethinkDB Job Queue UI
 
-> A boilerplate integrating Foundation for Sites and VueJS
+> Get insights to your queue job statuses
 
 This repository is an example of how to use [Foundation for Sites](https://github.com/zurb/foundation-sites) in a [Vue](https://github.com/vuejs/vue) single-page application. The project is scaffolded using [vue-cli](https://github.com/vuejs/vue-cli), with the [webpack](https://github.com/vuejs-templates/webpack) template, and [vue-router](https://github.com/vuejs/vue-router). 
 
