@@ -6,9 +6,6 @@ This repository is an example of how to use [Foundation for Sites](https://githu
 
 A detailed description of the project [is available here](https://medium.com/@tommaso.marcelli/setting-up-vue-2-and-foundation-6-3f858b4ad20#.mfkp11mid).
 
-## Warning
-The master branch is based on a recent vue-cli template, which makes use of Webpack 2. For a working configuration using Webpack 1, check out the [webpackv1 branch](https://github.com/hal0gen/vue-foundation/tree/webpackv1)
-
 ## Build Setup
 
 ``` bash

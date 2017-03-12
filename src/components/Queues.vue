@@ -17,14 +17,15 @@
         </thead>
         <tbody>
         <tr v-for="queue in queues">
-          <td>{{ queue.name }}</td>
-          <td>{{ queue.waiting }}</td>
-          <td>{{ queue.active }}</td>
-          <td>{{ queue.completed }}</td>
-          <td>{{ queue.cancelled }}</td>
-          <td>{{ queue.failed }}</td>
-          <td>{{ queue.terminated }}</td>
+          <td><a :href="'/#/queues/' + queue.name + '/active'">{{ queue.name }}</a></td>
+          <td><a :href="'/#/queues/' + queue.name + '/active'">{{ queue.active }}</a></td>
+          <td><a :href="'/#/queues/' + queue.name + '/waiting'">{{ queue.waiting }}</a></td>
+          <td><a :href="'/#/queues/' + queue.name + '/completed'">{{ queue.completed }}</a></td>
+          <td><a :href="'/#/queues/' + queue.name + '/cancelled'">{{ queue.cancelled }}</a></td>
+          <td><a :href="'/#/queues/' + queue.name + '/failed'">{{ queue.failed }}</a></td>
+          <td><a :href="'/#/queues/' + queue.name + '/terminated'">{{ queue.terminated }}</a></td>
           <td>{{ queue.total }}</td>
+          <td><button type="button" class="button">Purge</button></td>
         </tr>
         </tbody>
       </table>
@@ -32,7 +33,9 @@
   </div>
 </template>
 
-<script>
+<script type="text/javascript">
+  import Vue from 'vue'
+
   const queues = {
     data () {
       return {
@@ -40,33 +43,10 @@
       }
     },
     created () {
-      fetch('http://server-mock.com/queues').then(queues => {
-        console.info(queues)
-        this.queues = queues
-      }).catch(err => {
-        console.error(err)
-        this.queues = [
-          {
-            name: 'Registration Emails',
-            waiting: 1,
-            active: 0,
-            completed: 0,
-            cancelled: 0,
-            failed: 0,
-            terminated: 0,
-            total: 1
-          },
-          {
-            name: 'Document Crawling',
-            waiting: 129,
-            active: 1,
-            completed: 0,
-            cancelled: 0,
-            failed: 0,
-            terminated: 0,
-            total: 130
-          }
-        ]
+      Vue.http.get('http://server-queue.com/queues').then(response => {
+        this.queues = response.body
+      }).catch(response => {
+        console.error(response)
       })
     }
   }
@@ -75,19 +55,4 @@
 </script>
 
 <style lang="scss" scoped>
-
-  .image {
-    margin-top: 0.75rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .call-button {
-    border-radius: 20px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-
-
 </style>

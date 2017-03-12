@@ -4,25 +4,16 @@
       <ul class="sidebar-menu" data-close="offCanvas">
         <li><router-link to="/" exact>Home</router-link></li>
         <li><router-link to="/queues" exact>Queues</router-link></li>
-        <!--<li><router-link to="/reveal" exact>Reveal</router-link></li>-->
-        <!--<li><router-link to="/slider" exact>Slider</router-link></li>-->
-        <!--<li><router-link to="/tooltip" exact>Tooltip</router-link></li>-->
-        <!--<li><router-link to="/dropdown-menu" exact>Dropdown Menu</router-link></li>-->
-        <!--<li><router-link to="/drilldown-menu" exact>Drilldown Menu</router-link></li>-->
-        <!--<li><router-link to="/accordion-menu" exact>Accordion Menu</router-link></li>-->
-        <!--<li><router-link to="/magellan" exact>Magellan</router-link></li>-->
-        <!--<li><router-link to="/accordion" exact>Accordion</router-link></li>-->
-        <!--<li><router-link to="/dropdown" exact>Dropdown</router-link></li>-->
-        <!--<li><router-link to="/tabs" exact>Tabs</router-link></li>-->
-        <!--<li><router-link to="/orbit" exact>Orbit</router-link></li>-->
-      </ul>          
+        <li><router-link to="/jobs" exact>Jobs</router-link></li>
+        <li><router-link to="/servers" exact>Servers</router-link></li>
+      </ul>
     </div>
     <div class="off-canvas-content" data-off-canvas-content>
       <div class="top-bar">
         
           <ul class="menu expanded">
             <li class="logo">
-              <router-link to="/">RethinkDB Job Queue</router-link>
+              <router-link to="/">RethinkDB Job Queue UI</router-link>
             </li>
             <li><a class="button small menu-button" data-toggle="offCanvas">Menu</a></li>
           </ul>
