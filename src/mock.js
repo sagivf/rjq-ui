@@ -1,6 +1,6 @@
 window.Leonardo.addStates([
   {
-    name: 'Get Data',
+    name: 'Get Queues',
     url: '/queues',
     verb: 'GET',
     options: [
@@ -36,4 +36,4 @@ window.Leonardo.addStates([
   }
 ])
 
-window.Leonardo.activateStateOption('Get Data', 'success')
+window.Leonardo.activateStateOption('Get Queues', 'success')
