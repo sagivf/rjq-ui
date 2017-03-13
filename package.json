@@ -1,9 +1,27 @@
 {
   "name": "rjq-ui",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "Tommaso Marcelli <tommaso.marcelli@gmail.com>",
-  "private": true,
+  "description": "RethinkDB Job Queue insights",
+  "author": "Sagiv Frankel<sagivf@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/grantcarthew/node-rethinkdb-job-queue",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sagivf/rjq-ui.git"
+  },
+  "keywords": [
+    "rethinkdb"
+  ],
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "standard": {
+    "ignore": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/sagivf/rjq-ui/issues"
+  },
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
@@ -69,9 +87,5 @@
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.17.1",
     "webpack-merge": "^3.0.0"
-  },
-  "engines": {
-    "node": ">= 4.0.0",
-    "npm": ">= 3.0.0"
   }
 }
