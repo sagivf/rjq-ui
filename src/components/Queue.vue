@@ -13,7 +13,7 @@
           <!--<li class="tabs-title is-active"><a href="/#/queues/Registration Emails/active" aria-selected="true">Active</a></li>-->
           <!--<li class="tabs-title"><a href="/#/queues/Registration Emails/waiting">Waiting</a></li>-->
           <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Active</a></li>
-          <li class="tabs-title"><a href="#panel2">Waiting</a></li>
+          <li class="tabs-title"><router-link :to="{ name: 'queue', params: { id: 'Registration Emails', status: 'waiting' }}">Waiting</router-link></li>
           <li class="tabs-title"><a href="#panel3">Completed</a></li>
           <li class="tabs-title"><a href="#panel4">Cancelled</a></li>
           <li class="tabs-title"><a href="#panel5">Failed</a></li>
