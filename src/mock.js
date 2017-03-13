@@ -35,3 +35,5 @@ window.Leonardo.addStates([
     ]
   }
 ])
+
+window.Leonardo.activateStateOption('Get Data', 'success')
