@@ -13,7 +13,7 @@
         RethinkDB Job Queue
       </a>
       <a class="button secondary hollow call-button"
-         href="https://github.com/hal0gen/vue-foundation"
+         href="https://github.com/sagivf/rjq-ui"
          target="_blank">
         <i class="icon-github-circled"></i>
         Source
