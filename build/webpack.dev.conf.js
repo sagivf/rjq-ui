@@ -11,7 +11,7 @@ Object.keys(baseWebpackConfig.entry).forEach(function (name) {
   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
 })
 
-const rules = utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
+var rules = utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
 rules.push({
   test: /\/leonardo.js/,
   use: [
