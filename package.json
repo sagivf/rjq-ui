@@ -67,6 +67,7 @@
     "function-bind": "^1.1.0",
     "html-webpack-plugin": "^2.28.0",
     "http-proxy-middleware": "^0.17.4",
+    "leonardojs": "^3.1.8",
     "node-sass": "^4.5.0",
     "npm-check-updates": "^2.10.3",
     "opn": "^4.0.2",

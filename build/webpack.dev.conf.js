@@ -11,9 +11,20 @@ Object.keys(baseWebpackConfig.entry).forEach(function (name) {
   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
 })
 
+const rules = utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
+rules.push({
+  test: /\/leonardo.js/,
+  use: [
+    'script-loader'
+  ]
+});
+
 module.exports = merge(baseWebpackConfig, {
+  entry: {
+    mock: './src/mock.js'
+  },
   module: {
-    rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
+    rules: rules
   },
   // cheap-module-eval-source-map is faster for development
   devtool: '#cheap-module-eval-source-map',
@@ -28,7 +39,8 @@ module.exports = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
-      inject: true
+      inject: true,
+      chunks: ['mock', 'app']
     }),
     new FriendlyErrorsPlugin()
   ]
