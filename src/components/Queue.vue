@@ -12,57 +12,35 @@
         <ul class="tabs vertical" data-tabs id="deeplinked-tabs">
           <!--<li class="tabs-title is-active"><a href="/#/queues/Registration Emails/active" aria-selected="true">Active</a></li>-->
           <!--<li class="tabs-title"><a href="/#/queues/Registration Emails/waiting">Waiting</a></li>-->
-          <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Active</a></li>
-          <li class="tabs-title"><router-link :to="{ name: 'queue', params: { id: 'Registration Emails', status: 'waiting' }}">Waiting</router-link></li>
-          <li class="tabs-title"><a href="#panel3">Completed</a></li>
-          <li class="tabs-title"><a href="#panel4">Cancelled</a></li>
-          <li class="tabs-title"><a href="#panel5">Failed</a></li>
-          <li class="tabs-title"><a href="#panel6">Terminated</a></li>
+          <li class="tabs-title is-active"><a href="#waiting" aria-selected="true">Waiting</a></li>
+          <!--<li class="tabs-title"><router-link :to="{ name: 'queue', params: { id: 'Registration Emails', status: 'waiting' }}">Waiting</router-link></li>-->
+          <li class="tabs-title"><a href="#active">Active</a></li>
+          <li class="tabs-title"><a href="#completed">Completed</a></li>
+          <li class="tabs-title"><a href="#cancelled">Cancelled</a></li>
+          <li class="tabs-title"><a href="#failed">Failed</a></li>
+          <li class="tabs-title"><a href="#Terminated">Terminated</a></li>
         </ul>
       </div>
 
       <div class="medium-9 columns">
         <div class="tabs-content vertical" data-tabs-content="deeplinked-tabs">
-          <div class="tabs-panel" id="panel1">
-            <el-card class="box-card">
-              <div slot="header" class="clearfix">
-                <span style="line-height: 36px;">Job name 1</span>
-                <el-button style="float: right;" type="danger">Cancel</el-button>
-              </div>
-              <div v-for="o in 4" class="text item">
-                {{'List item ' + o }}
-              </div>
-            </el-card>
-            <el-card class="box-card">
-              <div slot="header" class="clearfix">
-                <span style="line-height: 36px;">Job name 2</span>
-                <el-button style="float: right;" type="danger">Cancel</el-button>
-              </div>
-              <div v-for="o in 4" class="text item">
-                {{'List item ' + o }}
-              </div>
-            </el-card>
+          <div class="tabs-panel" id="waiting">
+            <job-detail></job-detail>
           </div>
-          <div class="tabs-panel" id="panel2">
-            <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh
-              porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.
-              Suspendisse dictum feugiat nisl ut dapibus.</p>
+          <div class="tabs-panel" id="active">
+            <job-detail></job-detail>
           </div>
-          <div class="tabs-panel" id="panel3">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
+          <div class="tabs-panel" id="completed">
+            <job-detail></job-detail>
           </div>
-          <div class="tabs-panel" id="panel4">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
+          <div class="tabs-panel" id="cancelled">
+            <job-detail></job-detail>
           </div>
-          <div class="tabs-panel" id="panel5">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
+          <div class="tabs-panel" id="failed">
+            <job-detail></job-detail>
           </div>
-          <div class="tabs-panel" id="panel6">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
+          <div class="tabs-panel" id="Terminated">
+            <job-detail></job-detail>
           </div>
         </div>
       </div>
@@ -72,6 +50,7 @@
 
 <script type="text/javascript">
   import Vue from 'vue'
+  import JobDetail from './JobDetail.vue'
   // import $ from 'jquery'
 
   const queue = {
@@ -84,11 +63,6 @@
         data: {}
       }
     },
-//    created () {
-//      // fetch the data when the view is created and the data is
-//      // already being observed
-//      this.fetchData()
-//    },
     watch: {
       // call again the method if the route changes
       '$route': 'changeTab'
@@ -106,6 +80,9 @@
       }).catch(response => {
         console.error(response)
       })
+    },
+    components: {
+      JobDetail
     }
   }
 
