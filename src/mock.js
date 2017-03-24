@@ -1,3 +1,5 @@
+import 'leonardojs'
+
 window.Leonardo.addStates([
   {
     name: 'Get Queues',

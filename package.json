@@ -1,12 +1,31 @@
 {
   "name": "rjq-ui",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "Tommaso Marcelli <tommaso.marcelli@gmail.com>",
-  "private": true,
+  "description": "RethinkDB Job Queue insights",
+  "author": "Sagiv Frankel<sagivf@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://sagivf.github.io/rjq-ui/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sagivf/rjq-ui.git"
+  },
+  "keywords": [
+    "rethinkdb"
+  ],
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "standard": {
+    "ignore": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/sagivf/rjq-ui/issues"
+  },
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
+    "ghp": "node build/ghp.js",
     "lint": "eslint --ext .js,.vue src",
     "upgrade": "npm run upgrade:rm && npm run upgrade:ncu && npm run upgrade:npm-install",
     "upgrade:rm": "rm node_modules -Rf",
@@ -49,6 +68,7 @@
     "function-bind": "^1.1.0",
     "html-webpack-plugin": "^2.28.0",
     "http-proxy-middleware": "^0.17.4",
+    "leonardojs": "^3.1.8",
     "node-sass": "^4.5.0",
     "npm-check-updates": "^2.10.3",
     "opn": "^4.0.2",
@@ -69,9 +89,5 @@
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.17.1",
     "webpack-merge": "^3.0.0"
-  },
-  "engines": {
-    "node": ">= 4.0.0",
-    "npm": ">= 3.0.0"
   }
 }
