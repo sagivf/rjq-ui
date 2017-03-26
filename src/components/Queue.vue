@@ -7,39 +7,74 @@
 
       <div class="medium-3 columns">
 
-        <!--<h2>Status {{ $route.params.status || 'All' }}</h2>-->
-        <!--<p>{{data}}</p>-->
-        <ul class="tabs vertical" data-tabs id="deeplinked-tabs">
-          <!--<li class="tabs-title is-active"><a href="/#/queues/Registration Emails/active" aria-selected="true">Active</a></li>-->
-          <!--<li class="tabs-title"><a href="/#/queues/Registration Emails/waiting">Waiting</a></li>-->
-          <li class="tabs-title is-active"><a href="#waiting" aria-selected="true">Waiting</a></li>
-          <!--<li class="tabs-title"><router-link :to="{ name: 'queue', params: { id: 'Registration Emails', status: 'waiting' }}">Waiting</router-link></li>-->
-          <li class="tabs-title"><a href="#active">Active</a></li>
-          <li class="tabs-title"><a href="#completed">Completed</a></li>
-          <li class="tabs-title"><a href="#cancelled">Cancelled</a></li>
-          <li class="tabs-title"><a href="#failed">Failed</a></li>
-          <li class="tabs-title"><a href="#Terminated">Terminated</a></li>
+        <h2>Status {{ $route.params.status || 'All' }}</h2>
+        <ul class="tabs vertical">
+          <li class="tabs-title tabs-title-all">
+            <router-link :to="{ name: 'queue', params: { id: $route.params.id }}">
+              All
+            </router-link>
+          </li>
+          <li class="tabs-title tabs-title-active">
+            <router-link :to="{ name: 'queue', params: { id: $route.params.id, status: 'active' }}">
+              Active
+            </router-link>
+          </li>
+          <li class="tabs-title tabs-title-waiting">
+            <router-link :to="{ name: 'queue', params: { id: $route.params.id, status: 'waiting' }}">
+              Waiting
+            </router-link>
+          </li>
+          <li class="tabs-title tabs-title-completed">
+            <router-link :to="{ name: 'queue', params: { id: $route.params.id, status: 'completed' }}">
+              Completed
+            </router-link>
+          </li>
+          <li class="tabs-title tabs-title-cancelled">
+            <router-link :to="{ name: 'queue', params: { id: $route.params.id, status: 'cancelled' }}">
+              Cancelled
+            </router-link>
+          </li>
+          <li class="tabs-title tabs-title-failed">
+            <router-link :to="{ name: 'queue', params: { id: $route.params.id, status: 'failed' }}">
+              Failed
+            </router-link>
+          </li>
+          <li class="tabs-title tabs-title-terminated">
+            <router-link :to="{ name: 'queue', params: { id: $route.params.id, status: 'terminated' }}">
+              Terminated
+            </router-link>
+          </li>
         </ul>
       </div>
 
       <div class="medium-9 columns">
-        <div class="tabs-content vertical" data-tabs-content="deeplinked-tabs">
+        <div class="tabs-content vertical">
+          <div class="tabs-panel" id="all">
+            All (temp)
+            <job-detail></job-detail>
+          </div>
           <div class="tabs-panel" id="waiting">
+            Waiting (temp)
             <job-detail></job-detail>
           </div>
           <div class="tabs-panel" id="active">
+            Active (temp)
             <job-detail></job-detail>
           </div>
           <div class="tabs-panel" id="completed">
+            Completed (temp)
             <job-detail></job-detail>
           </div>
           <div class="tabs-panel" id="cancelled">
+            Cancelled (temp)
             <job-detail></job-detail>
           </div>
           <div class="tabs-panel" id="failed">
+            Failed (temp)
             <job-detail></job-detail>
           </div>
-          <div class="tabs-panel" id="Terminated">
+          <div class="tabs-panel" id="terminated">
+            Terminated (temp)
             <job-detail></job-detail>
           </div>
         </div>
@@ -51,12 +86,11 @@
 <script type="text/javascript">
   import Vue from 'vue'
   import JobDetail from './JobDetail.vue'
-  // import $ from 'jquery'
+  import $ from 'jquery'
 
   const queue = {
     mixins: [
-      // eslint-disable-next-line
-      require('../mixins/foundation')
+      require('../mixins/foundation') // eslint-disable-line
     ],
     data () {
       return {
@@ -64,21 +98,25 @@
       }
     },
     watch: {
-      // call again the method if the route changes
       '$route': 'changeTab'
     },
     methods: {
       changeTab () {
-        // console.log(this.$route.params.status)
-        // $('#deeplinked-tabs').foundation('selectTab', '??') TODO change urls activate tabs
+        const { status = 'all' } = this.$route.params
+        $('.tabs-panel').removeClass('is-active').attr('aria-hidden', '')
+        $(`#${status}`).addClass('is-active').attr('aria-hidden', 'false')
+
+        $('.tabs-title').removeClass('is-active')
+        $(`.tabs-title-${status}`).addClass('is-active')
       }
     },
     created () {
-      const statuses = this.$route.params.status ? [this.$route.params.status] : ['waiting,complete']
-      Vue.http.get(`http://server-queue.com/queues/${this.$route.params.id}?status=${statuses.join(',')}`).then(response => {
+      Vue.http.get(`http://server-queue.com/queues/${this.$route.params.id}`).then(response => {
         this.data = response.body
+        this.changeTab()
       }).catch(response => {
         console.error(response)
+        this.changeTab()
       })
     },
     components: {
@@ -90,24 +128,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .text {
-    font-size: 14px;
-  }
-
-  .item {
-    padding: 18px 0;
-  }
-
-  .clearfix:before,
-  .clearfix:after {
-    display: table;
-    content: "";
-  }
-  .clearfix:after {
-    clear: both
-  }
-
-  .box-card {
-    width: 480px;
+  .is-active a {
+    background: #f8f8f8;
   }
 </style>

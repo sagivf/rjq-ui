@@ -16,7 +16,7 @@ export default new Router({
     // routes
     { name: 'home', path: '/', component: Home },
     { name: 'queues', path: '/queues', component: Queues },
-    { name: 'queue', path: '/queues/:id/:status', component: Queue },
+    { name: 'queue', path: '/queues/:id/:status?', component: Queue },
     { name: 'jobs', path: '/jobs', component: Jobs },
     { name: 'servers', path: '/servers', component: Servers }
   ]
