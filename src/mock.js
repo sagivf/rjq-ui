@@ -222,3 +222,4 @@ window.Leonardo.addStates([
 ])
 
 window.Leonardo.activateStateOption('Get Queues', 'success')
+window.Leonardo.activateStateOption('Get Jobs', 'success')

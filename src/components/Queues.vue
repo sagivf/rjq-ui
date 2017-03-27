@@ -23,8 +23,8 @@
           <td><router-link :to="{ name: 'queue', params: { id: queue.name, status: 'cancelled' }}">{{ queue.cancelled }}</router-link></td>
           <td><router-link :to="{ name: 'queue', params: { id: queue.name, status: 'terminated' }}">{{ queue.terminated }}</router-link></td>
           <td>{{ queue.total }}</td>
-          <td><button type="button" class="button">Purge</button></td>
-          <td><button type="button" class="button">Purge Logs</button></td>
+          <td><button type="button" class="button alert">Purge</button></td>
+          <td><button type="button" class="button alert">Purge Logs</button></td>
         </tr>
         </tbody>
       </table>
