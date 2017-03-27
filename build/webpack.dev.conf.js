@@ -19,6 +19,8 @@ rules.push({
   ]
 });
 
+var chunks = ['mock','app'];
+
 module.exports = merge(baseWebpackConfig, {
   entry: {
     mock: './src/mock.js'
@@ -40,7 +42,13 @@ module.exports = merge(baseWebpackConfig, {
       filename: 'index.html',
       template: 'index.html',
       inject: true,
-      chunks: ['mock', 'app']
+      chunks: chunks,
+      chunksSortMode: (c1, c2) => {
+        let orders = chunks;
+        let o1 = orders.indexOf(c1.names[0]);
+        let o2 = orders.indexOf(c2.names[0]);
+        return o1 - o2;
+      }
     }),
     new FriendlyErrorsPlugin()
   ]

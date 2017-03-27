@@ -17,15 +17,14 @@
         </thead>
         <tbody>
         <tr v-for="queue in queues">
-          <td><a :href="'#/queues/' + queue.name + '/active'">{{ queue.name }}</a></td>
-          <td><a :href="'#/queues/' + queue.name + '/active'">{{ queue.active }}</a></td>
-          <td><a :href="'#/queues/' + queue.name + '/waiting'">{{ queue.waiting }}</a></td>
-          <td><a :href="'#/queues/' + queue.name + '/completed'">{{ queue.completed }}</a></td>
-          <td><a :href="'#/queues/' + queue.name + '/cancelled'">{{ queue.cancelled }}</a></td>
-          <td><a :href="'#/queues/' + queue.name + '/failed'">{{ queue.failed }}</a></td>
-          <td><a :href="'#/queues/' + queue.name + '/terminated'">{{ queue.terminated }}</a></td>
+          <td><router-link :to="{ name: 'queue', params: { id: queue.name }}">{{ queue.name }}</router-link></td>
+          <td><router-link :to="{ name: 'queue', params: { id: queue.name, status: 'waiting' }}">{{ queue.waiting }}</router-link></td>
+          <td><router-link :to="{ name: 'queue', params: { id: queue.name, status: 'failed' }}">{{ queue.failed }}</router-link></td>
+          <td><router-link :to="{ name: 'queue', params: { id: queue.name, status: 'cancelled' }}">{{ queue.cancelled }}</router-link></td>
+          <td><router-link :to="{ name: 'queue', params: { id: queue.name, status: 'terminated' }}">{{ queue.terminated }}</router-link></td>
           <td>{{ queue.total }}</td>
           <td><button type="button" class="button">Purge</button></td>
+          <td><button type="button" class="button">Purge Logs</button></td>
         </tr>
         </tbody>
       </table>
