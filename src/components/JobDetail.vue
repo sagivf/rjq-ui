@@ -1,12 +1,15 @@
 <template>
   <div class="row">
-    <el-card class="box-card">
+    <el-card class="box-card" v-for="job in jobs">
       <div slot="header" class="clearfix">
-        <span style="line-height: 36px;">Job name 1</span>
+        <span style="line-height: 36px;">{{job.name}} - {{job.id}}</span>
         <el-button style="float: right;" type="danger">Cancel</el-button>
       </div>
-      <div v-for="o in 4" class="text item">
-        {{'List item ' + o }}
+      <div>
+        <ul>
+          <li>Priority: {{job.priority}}</li>
+          <li>Process Count: {{job.processCount}}</li>
+        </ul>
       </div>
     </el-card>
   </div>
@@ -14,18 +17,13 @@
 
 <script>
   export default {
-    mixins: [
-      // eslint-disable-next-line
-      require('../mixins/foundation'),
-    ],
-    name: 'tooltip',
-    data () {
-      return {
-        msg: 'Tooltip'
-      }
-    }
+    mixins: [require('../mixins/foundation')],
+    props: ['jobs']
   }
 </script>
 
 <style lang="scss" scoped>
+  .box-card {
+    margin-bottom: 20px;
+  }
 </style>

@@ -50,32 +50,25 @@
       <div class="medium-9 columns">
         <div class="tabs-content vertical">
           <div class="tabs-panel" id="all">
-            All (temp)
-            <job-detail></job-detail>
-          </div>
-          <div class="tabs-panel" id="waiting">
-            Waiting (temp)
-            <job-detail></job-detail>
+            <job-detail v-bind:jobs="all"></job-detail>
           </div>
           <div class="tabs-panel" id="active">
-            Active (temp)
-            <job-detail></job-detail>
+            <job-detail v-bind:jobs="active"></job-detail>
+          </div>
+          <div class="tabs-panel" id="waiting">
+            <job-detail v-bind:jobs="waiting"></job-detail>
           </div>
           <div class="tabs-panel" id="completed">
-            Completed (temp)
-            <job-detail></job-detail>
+            <job-detail v-bind:jobs="completed"></job-detail>
           </div>
           <div class="tabs-panel" id="cancelled">
-            Cancelled (temp)
-            <job-detail></job-detail>
+            <job-detail v-bind:jobs="cancelled"></job-detail>
           </div>
           <div class="tabs-panel" id="failed">
-            Failed (temp)
-            <job-detail></job-detail>
+            <job-detail v-bind:jobs="failed"></job-detail>
           </div>
           <div class="tabs-panel" id="terminated">
-            Terminated (temp)
-            <job-detail></job-detail>
+            <job-detail v-bind:jobs="terminated"></job-detail>
           </div>
         </div>
       </div>
@@ -88,13 +81,22 @@
   import JobDetail from './JobDetail.vue'
   import $ from 'jquery'
 
+  const statuses = ['waiting', 'active', 'completed']
+  function createStatuses (jobs) {
+    statuses.forEach(status => {
+      this[status] = jobs.filter(job => job.status === status)
+    })
+  }
+
   const queue = {
     mixins: [
       require('../mixins/foundation') // eslint-disable-line
     ],
     data () {
       return {
-        data: {}
+        all: [],
+        waiting: [],
+        active: []
       }
     },
     watch: {
@@ -112,11 +114,11 @@
     },
     created () {
       Vue.http.get(`http://server-queue.com/queues/${this.$route.params.id}`).then(response => {
-        this.data = response.body
+        this.all = response.body
+        createStatuses.call(this, this.all)
         this.changeTab()
       }).catch(response => {
         console.error(response)
-        this.changeTab()
       })
     },
     components: {
