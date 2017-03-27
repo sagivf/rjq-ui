@@ -50,25 +50,25 @@
       <div class="medium-9 columns">
         <div class="tabs-content vertical">
           <div class="tabs-panel" id="all">
-            <job-detail v-bind:jobs="all"></job-detail>
+            <jobs v-bind:list="all"></jobs>
           </div>
           <div class="tabs-panel" id="active">
-            <job-detail v-bind:jobs="active"></job-detail>
+            <jobs v-bind:list="active"></jobs>
           </div>
           <div class="tabs-panel" id="waiting">
-            <job-detail v-bind:jobs="waiting"></job-detail>
+            <jobs v-bind:list="waiting"></jobs>
           </div>
           <div class="tabs-panel" id="completed">
-            <job-detail v-bind:jobs="completed"></job-detail>
+            <jobs v-bind:list="completed"></jobs>
           </div>
           <div class="tabs-panel" id="cancelled">
-            <job-detail v-bind:jobs="cancelled"></job-detail>
+            <jobs v-bind:list="cancelled"></jobs>
           </div>
           <div class="tabs-panel" id="failed">
-            <job-detail v-bind:jobs="failed"></job-detail>
+            <jobs v-bind:list="failed"></jobs>
           </div>
           <div class="tabs-panel" id="terminated">
-            <job-detail v-bind:jobs="terminated"></job-detail>
+            <jobs v-bind:list="terminated"></jobs>
           </div>
         </div>
       </div>
@@ -78,7 +78,7 @@
 
 <script type="text/javascript">
   import Vue from 'vue'
-  import JobDetail from './JobDetail.vue'
+  import Jobs from './Jobs.vue'
   import $ from 'jquery'
 
   const statuses = ['waiting', 'active', 'completed']
@@ -122,7 +122,7 @@
       })
     },
     components: {
-      JobDetail
+      Jobs
     }
   }
 
