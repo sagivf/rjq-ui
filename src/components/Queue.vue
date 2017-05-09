@@ -113,7 +113,7 @@
       }
     },
     created () {
-      Vue.http.get(`http://server-queue.com/queues/${this.$route.params.id}`).then(response => {
+      Vue.http.get(`/rjq-api/queues/${this.$route.params.id}`).then(response => {
         this.all = response.body
         createStatuses.call(this, this.all)
         this.changeTab()

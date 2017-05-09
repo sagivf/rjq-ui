@@ -42,7 +42,7 @@
       }
     },
     created () {
-      Vue.http.get('http://server-queue.com/queues').then(response => {
+      Vue.http.get('/rjq-api/queues').then(response => {
         this.queues = response.body
       }).catch(response => {
         console.error(response)
