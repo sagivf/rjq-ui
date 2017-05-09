@@ -5,10 +5,10 @@ const rjqApiKoa = require('rjq-api-koa')
 
 const {
   PORT = 4000,
-  RETHINK_PORT,
-  RETHINK_HOST,
-  RETHINK_USER,
-  RETHINK_PASSWORD
+  RETHINK_PORT = 15157,
+  RETHINK_HOST = 'aws-eu-central-1-portal.0.dblayer.com',
+  RETHINK_USER = 'admin',
+  RETHINK_PASSWORD = 'DILlJZz2HlHLh3DQAAJuCOOCrnLc54ucmgs882-Bzgc'
 } = process.env
 
 let {
@@ -21,6 +21,7 @@ if (!RETHINK_CERT) {
   RETHINK_CERT = fs.readFileSync('cert')
 }
 
+console.log(RETHINK_CERT)
 const app = new Koa()
 const staticPages = new Koa()
 
