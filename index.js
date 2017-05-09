@@ -16,6 +16,7 @@ let {
 } = process.env
 
 if (!RETHINK_CERT) {
+  console.log('certttt')
   const fs = require('fs')
   RETHINK_CERT = fs.readFileSync('cert')
 }
