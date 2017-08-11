@@ -8,7 +8,8 @@
 
 ## Standalone usage
 ```
-node ./bin/standalone.js --db-name=JobQueue --db-host="aws-eu-central-1-portal.0.dblayer.com" --db-user=admin --db-password=DILlJZz2HlHLh3DQAAJuCOOCrnLc54ucmgs882-Bzgc --db-port=15157 --db-certfile=cert
+All Options are optional and default to local setup
+node ./bin/standalone.js --db-name=<job queue db name> --db-host=<host address> --db-user=<sb user name> --db-password=<db password> --db-port=<db port> --db-certfile=<db certificate file>
 ```
 
 ## Middleware usage
