@@ -2,27 +2,26 @@
   <div id="app">
     <div class="off-canvas position-right" id="offCanvas" data-off-canvas>
       <ul class="sidebar-menu" data-close="offCanvas">
-        <li><router-link to="/" exact>Home</router-link></li>
-        <li><router-link to="/queues" exact>Queues</router-link></li>
+        <li><router-link to="/" exact>Queues</router-link></li>
         <li><router-link to="/jobs" exact>Jobs</router-link></li>
         <li><router-link to="/servers" exact>Servers</router-link></li>
+        <li><router-link to="/about" exact>About</router-link></li>
       </ul>
     </div>
     <div class="off-canvas-content" data-off-canvas-content>
       <div class="top-bar">
-        
+
           <ul class="menu expanded">
             <li class="logo">
               <router-link to="/">RethinkDB Job Queue UI</router-link>
             </li>
             <li><a class="button small menu-button" data-toggle="offCanvas">Menu</a></li>
           </ul>
-        
+
       </div>
       <div class="content-wrapper">
         <router-view></router-view>
       </div>
-    
     </div>
   </div>
 </template>
@@ -39,10 +38,10 @@ export default {
 
 
 
-<style lang="scss">  
+<style lang="scss">
   @import './styles/global';
-  
-  // Chrome Reset 
+
+  // Chrome Reset
   a:focus {
     outline: none;
   }
@@ -55,7 +54,7 @@ export default {
   li a.menu-button {
     border-radius: 20px;
     padding-left: 1.5rem;
-    padding-right: 1.5rem; 
+    padding-right: 1.5rem;
     font-weight: 600;
     text-transform: uppercase;
     display: inline-block;

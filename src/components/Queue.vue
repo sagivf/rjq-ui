@@ -81,7 +81,7 @@
   import Jobs from './Jobs.vue'
   import $ from 'jquery'
 
-  const statuses = ['waiting', 'active', 'completed']
+  const statuses = ['waiting', 'active', 'completed', 'failed', 'cancelled', 'terminated']
   function createStatuses (jobs) {
     statuses.forEach(status => {
       this[status] = jobs.filter(job => job.status === status)
@@ -113,8 +113,10 @@
       }
     },
     created () {
-      Vue.http.get(`/rjq-api/queues/${this.$route.params.id}`).then(response => {
+      Vue.http.get(`rjq-api/queues/${this.$route.params.id}`).then(response => {
         this.all = response.body
+        console.log('sadasd')
+        console.log(this.all)
         createStatuses.call(this, this.all)
         this.changeTab()
       }).catch(response => {

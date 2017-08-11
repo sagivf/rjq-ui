@@ -19,8 +19,10 @@
         <tr v-for="queue in queues">
           <td><router-link :to="{ name: 'queue', params: { id: queue.name }}">{{ queue.name }}</router-link></td>
           <td><router-link :to="{ name: 'queue', params: { id: queue.name, status: 'waiting' }}">{{ queue.waiting }}</router-link></td>
-          <td><router-link :to="{ name: 'queue', params: { id: queue.name, status: 'failed' }}">{{ queue.failed }}</router-link></td>
+          <td><router-link :to="{ name: 'queue', params: { id: queue.name, status: 'active' }}">{{ queue.active }}</router-link></td>
+          <td><router-link :to="{ name: 'queue', params: { id: queue.name, status: 'completed' }}">{{ queue.completed }}</router-link></td>
           <td><router-link :to="{ name: 'queue', params: { id: queue.name, status: 'cancelled' }}">{{ queue.cancelled }}</router-link></td>
+          <td><router-link :to="{ name: 'queue', params: { id: queue.name, status: 'failed' }}">{{ queue.failed }}</router-link></td>
           <td><router-link :to="{ name: 'queue', params: { id: queue.name, status: 'terminated' }}">{{ queue.terminated }}</router-link></td>
           <td>{{ queue.total }}</td>
           <td><button type="button" class="button alert">Purge</button></td>
@@ -42,7 +44,7 @@
       }
     },
     created () {
-      Vue.http.get('/rjq-api/queues').then(response => {
+      Vue.http.get('rjq-api/queues').then(response => {
         this.queues = response.body
       }).catch(response => {
         console.error(response)

@@ -14,8 +14,8 @@ export default new Router({
   linkActiveClass: 'active',
   routes: [
     // routes
-    { name: 'home', path: '/', component: Home },
-    { name: 'queues', path: '/queues', component: Queues },
+    { name: 'about', path: '/about', component: Home },
+    { name: 'queues', path: '/', component: Queues },
     { name: 'queue', path: '/queues/:id/:status?', component: Queue },
     { name: 'jobs', path: '/jobs', component: JobsHome },
     { name: 'servers', path: '/servers', component: Servers }

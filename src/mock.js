@@ -3,7 +3,7 @@ import 'leonardojs'
 window.Leonardo.addStates([
   {
     name: 'Get Queues',
-    url: '/rjq-api/queues$',
+    url: 'rjq-api/queues$',
     verb: 'GET',
     options: [
       {
@@ -38,7 +38,7 @@ window.Leonardo.addStates([
   },
   {
     name: 'Get Jobs',
-    url: '/rjq-api/queues/*',
+    url: 'rjq-api/queues/*',
     verb: 'GET',
     options: [
       {
