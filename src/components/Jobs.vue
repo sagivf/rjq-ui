@@ -19,12 +19,7 @@
 <script>
   export default {
     mixins: [require('../mixins/foundation')],
-    props: ['list'],
-    created (list) {
-      list.forEach(item => {
-        item.v = 'vvv';
-      });
-    }
+    props: ['list']
   }
 </script>
 

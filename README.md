@@ -9,8 +9,10 @@
 ## Standalone usage
 ```
 All Options are optional and default to local setup
-node ./bin/standalone.js --db-name=<job queue db name> --db-host=<host address> --db-user=<sb user name> --db-password=<db password> --db-port=<db port> --db-certfile=<db certificate file>
+node ./bin/www --db-name=<job queue db name> --db-host=<host address> --db-user=<sb user name> --db-password=<db password> --db-port=<db port> --db-certfile=<db certificate file>
 ```
+
+## Use with nanobox
 
 ## Middleware usage
 - [Koa](/examples/koa/index.js)
