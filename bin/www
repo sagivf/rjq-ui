@@ -12,11 +12,13 @@ program
   .option('-u, --db-user [value]', '[optional] db user name')
   .option('-w, --db-password [value]', '[optional] db user password')
   .option('-i, --db-port [value]', '[optional] db port')
-  .option('-c, --db-certfile [value]', '[optional] db cert file')
+  .option('-c, --db-cert [value]', '[optional] db cert')
+  .option('-f, --db-certfile [value]', '[optional] db cert file')
   .option('-p, --port [value]', '[optional] Server port, default process.env || 3000', process.env.PORT || 3000)
   .parse(process.argv)
 
 const { port, dbName, dbHost, dbPort, dbUser, dbPassword, dbCertfile } = program
+let {dbCert} = program
 const app = new Koa()
 const options = {}
 
@@ -32,10 +34,13 @@ if (dbName || dbHost || dbPort || dbUser || dbPassword) {
 
 if (dbCertfile) {
   const fs = require('fs')
-  const cert = fs.readFileSync(dbCertfile)
+  dbCert = fs.readFileSync(dbCertfile)
+}
+
+if (dbCert) {
   options.connection = options.connection || {}
   options.connection.ssl = {
-    ca: cert
+    ca: dbCert
   }
 }
 
