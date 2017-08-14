@@ -23,10 +23,6 @@ const app = new Koa()
 const options = {}
 
 if (dbName || dbHost || dbPort || dbUser || dbPassword) {
-  console.log('sss')
-  console.log('sss')
-  console.log('sss')
-  console.log(dbPort)
   options.connection = {
     db: dbName,
     host: dbHost,

@@ -28,7 +28,7 @@
     "ghp": "node build/ghp.js",
     "start": "node ./bin/www",
     "start:nanobox": "node ./bin/www --db-host=$DATA_DB_HOST",
-    "start:heroku": "node ./bin/www --db-host=$RETHINK_HOST --db-user=$RETHINK_USER --db-password=$RETHINK_PASSWORD --db-port=$RETHINK_PORT --db-cer=$RETHINK_CERT",
+    "start:heroku": "node ./bin/www --db-host=$RETHINK_HOST --db-user=$RETHINK_USER --db-password=$RETHINK_PASSWORD --db-port=$RETHINK_PORT --db-cert=$RETHINK_CERT",
     "lint": "eslint --ext .js,.vue src",
     "upgrade": "npm run upgrade:rm && npm run upgrade:ncu && npm run upgrade:npm-install",
     "upgrade:rm": "rm node_modules -Rf",
