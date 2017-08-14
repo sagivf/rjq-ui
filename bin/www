@@ -19,6 +19,13 @@ program
 
 const { port, dbName, dbHost, dbPort, dbUser, dbPassword, dbCertfile } = program
 let {dbCert} = program
+
+console.log('ooooo')
+console.log('ooooo')
+console.log('ooooo')
+console.log('ooooo')
+console.log(dbCert)
+
 const app = new Koa()
 const options = {}
 console.log(options)
