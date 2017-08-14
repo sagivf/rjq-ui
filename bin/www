@@ -18,7 +18,7 @@ program
   .parse(process.argv)
 
 const { port, dbName, dbHost, dbPort, dbUser, dbPassword, dbCertfile } = program
-let {dbCert} = program
+let dbCert = process.env.RETHINK_CERT;
 
 console.log('ooooo')
 console.log('ooooo')
