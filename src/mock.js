@@ -63,10 +63,6 @@ window.Leonardo.addStates([
             dateFinished: new Date(),
             dateStarted: new Date(),
             title: 'a',
-            data: {
-              title: 'Nice Job',
-              source: 'booooom'
-            },
             timeout: 300000
           },
           {

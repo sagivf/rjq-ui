@@ -32,7 +32,7 @@ if (dbName || dbHost || dbPort || dbUser || dbPassword) {
     password: dbPassword
   }
 }
-console.log(options)
+
 if (dbCertfile) {
   const fs = require('fs')
   dbCert = fs.readFileSync(dbCertfile)
@@ -43,8 +43,6 @@ if (dbCert) {
   options.connection.ssl = {
     ca: dbCert
   }
-
-  console.log(options)
 }
 
 app.use(rjqUI('koa', '/', options))

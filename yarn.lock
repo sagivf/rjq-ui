@@ -4310,6 +4310,10 @@ mkdirp@0.5.1, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkd
   dependencies:
     minimist "0.0.8"
 
+moment@^2.18.1:
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"
+
 motion-ui@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/motion-ui/-/motion-ui-1.2.3.tgz#9f7e17f0d66a15e9ee549023e6f3de1139a2e166"

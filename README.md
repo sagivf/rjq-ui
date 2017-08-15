@@ -6,17 +6,23 @@
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
+## Middleware usage
+- [Koa](/examples/koa/index.js)
+- [Express](/examples/express/index.js)
+
 ## Standalone usage
 ```
 All Options are optional and default to local setup
 node ./bin/www --db-name=<job queue db name> --db-host=<host address> --db-user=<sb user name> --db-password=<db password> --db-port=<db port> --db-certfile=<db certificate file>
 ```
 
-## Use with nanobox
+## Standalone with db instance - nanobox 
+Based on:
+- https://guides.nanobox.io/rethinkdb/
+- https://guides.nanobox.io/nodejs/koa/
 
-## Middleware usage
-- [Koa](/examples/koa/index.js)
-- [Express](/examples/express/index.js)
+1) [install nanobox](https://docs.nanobox.io/install/)'
+2) `nanobox run`, `nanobox run dry-run`, `nanobox deploy`
 
 ## Development
 
