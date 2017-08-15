@@ -1,6 +1,6 @@
 {
   "name": "rjq-ui",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "RethinkDB Job Queue insights",
   "author": "Sagiv Frankel<sagivf@gmail.com>",
   "license": "MIT",
@@ -36,22 +36,22 @@
     "upgrade:npm-install": "npm install"
   },
   "dependencies": {
-    "commander": "^2.11.0",
-    "foundation-sites": "~6.3.1",
-    "jquery": "^3.2.1",
     "koa": "^2.3.0",
     "koa-mount": "^3.0.0",
     "koa-static": "^4.0.1",
-    "moment": "^2.18.1",
-    "motion-ui": "^1.2.3",
     "path": "^0.12.7",
     "rjq-api-express": "^2.0.1",
-    "rjq-api-koa": "^2.0.1",
-    "vue": "^2.4.2",
-    "vue-router": "^2.7.0",
-    "what-input": "^4.3.1"
+    "rjq-api-koa": "^2.0.1"
   },
   "devDependencies": {
+    "moment": "^2.18.1",
+    "vue": "^2.4.2",
+    "vue-router": "^2.7.0",
+    "what-input": "^4.3.1",
+    "motion-ui": "^1.2.3",
+    "commander": "^2.11.0",
+    "foundation-sites": "~6.3.1",
+    "jquery": "^3.2.1",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
