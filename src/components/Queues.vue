@@ -13,6 +13,8 @@
           <th>Failed</th>
           <th>Terminated</th>
           <th>Total</th>
+          <!--<th></th>-->
+          <!--<th></th>-->
         </tr>
         </thead>
         <tbody>
@@ -25,8 +27,8 @@
           <td><router-link :to="{ name: 'queue', params: { id: queue.name, status: 'failed' }}">{{ queue.failed }}</router-link></td>
           <td><router-link :to="{ name: 'queue', params: { id: queue.name, status: 'terminated' }}">{{ queue.terminated }}</router-link></td>
           <td>{{ queue.total }}</td>
-          <td><button type="button" class="button alert">Purge</button></td>
-          <td><button type="button" class="button alert">Purge Logs</button></td>
+          <!--<td><button type="button" class="button alert">Purge</button></td>-->
+          <!--<td><button type="button" class="button alert">Purge Logs</button></td>-->
         </tr>
         </tbody>
       </table>

@@ -1,0 +1,21 @@
+run.config:
+  engine: nodejs
+  engine.config:
+    runtime: nodejs-8.0
+  # add nginx package
+  extra_packages:
+    - nginx
+
+# add a database
+data.db:
+  image: nanobox/rethinkdb:2.3
+
+# add a web component and give it a "start" command
+web.main:
+  start:
+    nginx: nginx -c /app/config/nginx.conf
+    node: npm run start:dbconfig
+
+# add a worker component and give it a "start" command
+# worker.main:
+#   start: node worker.js

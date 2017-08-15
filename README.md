@@ -6,14 +6,23 @@
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
-## Standalone usage
-```
-node ./bin/standalone.js --db-name=JobQueue --db-host="aws-eu-central-1-portal.0.dblayer.com" --db-user=admin --db-password=DILlJZz2HlHLh3DQAAJuCOOCrnLc54ucmgs882-Bzgc --db-port=15157 --db-certfile=cert
-```
-
 ## Middleware usage
 - [Koa](/examples/koa/index.js)
 - [Express](/examples/express/index.js)
+
+## Standalone usage
+```
+All Options are optional and default to local setup
+node ./bin/www --db-name=<job queue db name> --db-host=<host address> --db-user=<sb user name> --db-password=<db password> --db-port=<db port> --db-certfile=<db certificate file>
+```
+
+## Standalone with db instance - nanobox 
+Based on:
+- https://guides.nanobox.io/rethinkdb/
+- https://guides.nanobox.io/nodejs/koa/
+
+1) [install nanobox](https://docs.nanobox.io/install/)'
+2) `nanobox run`, `nanobox run dry-run`, `nanobox deploy`
 
 ## Development
 

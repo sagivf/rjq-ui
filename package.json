@@ -1,6 +1,6 @@
 {
   "name": "rjq-ui",
-  "version": "1.0.0",
+  "version": "1.4.0",
   "description": "RethinkDB Job Queue insights",
   "author": "Sagiv Frankel<sagivf@gmail.com>",
   "license": "MIT",
@@ -13,11 +13,11 @@
     "rethinkdb"
   ],
   "engines": {
-    "node": ">= 4.0.0",
+    "node": ">= 8.0.0",
     "npm": ">= 3.0.0"
   },
   "standard": {
-    "ignore": "public"
+    "ignore": "cert"
   },
   "bugs": {
     "url": "https://github.com/sagivf/rjq-ui/issues"
@@ -26,8 +26,9 @@
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "ghp": "node build/ghp.js",
-    "start": "node index.js",
-    "postinstall": "npm run build",
+    "start": "node ./bin/www",
+    "start:nanobox": "node ./bin/www --db-host=$DATA_DB_HOST",
+    "start:heroku": "node ./bin/www --db-host=$RETHINK_HOST --db-user=$RETHINK_USER --db-password=$RETHINK_PASSWORD --db-port=$RETHINK_PORT --db-cert=$RETHINK_CERT",
     "lint": "eslint --ext .js,.vue src",
     "upgrade": "npm run upgrade:rm && npm run upgrade:ncu && npm run upgrade:npm-install",
     "upgrade:rm": "rm node_modules -Rf",
@@ -36,15 +37,16 @@
   },
   "dependencies": {
     "commander": "^2.11.0",
-    "foundation-sites": "^6.3.1",
+    "foundation-sites": "~6.3.1",
     "jquery": "^3.2.1",
     "koa": "^2.3.0",
     "koa-mount": "^3.0.0",
     "koa-static": "^4.0.1",
+    "moment": "^2.18.1",
     "motion-ui": "^1.2.3",
     "path": "^0.12.7",
-    "rjq-api-express": "^1.0.0",
-    "rjq-api-koa": "^1.0.3",
+    "rjq-api-express": "^2.0.1",
+    "rjq-api-koa": "^2.0.1",
     "vue": "^2.4.2",
     "vue-router": "^2.7.0",
     "what-input": "^4.3.1"

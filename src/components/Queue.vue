@@ -4,9 +4,7 @@
       <h1>Queue {{ $route.params.id }}</h1>
     </div>
     <div class="row collapse">
-
-      <div class="medium-3 columns">
-
+      <div class="medium-3 columns rjq-status-list">
         <h2>Status {{ $route.params.status || 'All' }}</h2>
         <ul class="tabs vertical">
           <li class="tabs-title tabs-title-all">
@@ -83,6 +81,7 @@
 
   const statuses = ['waiting', 'active', 'completed', 'failed', 'cancelled', 'terminated']
   function createStatuses (jobs) {
+    this.all = jobs
     statuses.forEach(status => {
       this[status] = jobs.filter(job => job.status === status)
     })
@@ -93,11 +92,9 @@
       require('../mixins/foundation') // eslint-disable-line
     ],
     data () {
-      return {
-        all: [],
-        waiting: [],
-        active: []
-      }
+      const _statuses = { all: [] }
+      statuses.forEach(name => { _statuses[name] = [] })
+      return _statuses
     },
     watch: {
       '$route': 'changeTab'
@@ -115,8 +112,6 @@
     created () {
       Vue.http.get(`rjq-api/queues/${this.$route.params.id}`).then(response => {
         this.all = response.body
-        console.log('sadasd')
-        console.log(this.all)
         createStatuses.call(this, this.all)
         this.changeTab()
       }).catch(response => {
@@ -135,4 +130,8 @@
   .is-active a {
     background: #f8f8f8;
   }
+  .row.collapse > .rjq-status-list {
+    padding-right: 20px;
+  }
+
 </style>
