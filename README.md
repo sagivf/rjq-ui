@@ -22,7 +22,7 @@ Based on:
 - https://guides.nanobox.io/nodejs/koa/
 
 1) [install nanobox](https://docs.nanobox.io/install/)'
-2) `nanobox run`, `nanobox run dry-run`, `nanobox deploy`
+2) `nanobox run`, `nanobox run dry-run`, `nanobox remote add app-name`, `nanobox deploy`
 
 ## Development
 
