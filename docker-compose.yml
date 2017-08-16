@@ -1,0 +1,64 @@
+version: '3'
+services:
+  consumer:
+    build:
+      context: .
+    entrypoint:
+      - node
+      - /app/script/consumer.js
+    environment:
+       - DB_NAME=$DB_NAME
+       - DB_HOST=$DB_HOST
+       - DB_USER=$DB_USER
+       - DB_PASSWORD=$DB_PASSWORD
+       - DB_PORT=$DB_PORT
+    volumes:
+      - ./examples/script:/app/script
+    ports:
+      - 12001
+
+  publisher:
+    build:
+      context: .
+    entrypoint:
+      - node
+      - /app/script/publisher.js
+    environment:
+       - DB_NAME=$DB_NAME
+       - DB_HOST=$DB_HOST
+       - DB_USER=$DB_USER
+       - DB_PASSWORD=$DB_PASSWORD
+       - DB_PORT=$DB_PORT
+    volumes:
+      - ./examples/script:/app/script
+    ports:
+      - 12001
+
+  ui:
+    build:
+      context: .
+    entrypoint:
+       - node
+       - /app/bin/www
+       - -d
+       - $DB_NAME
+       - -s
+       - $DB_HOST
+       - -u 
+       - $DB_USER
+       - -w 
+       - $DB_PASSWORD
+       - -i 
+       - $DB_PORT
+       - -p 
+       - "3000"
+    environment:
+       - DB_NAME=$DB_NAME
+       - DB_HOST=$DB_HOST
+       - DB_USER=$DB_USER
+       - DB_PASSWORD=$DB_PASSWORD
+       - DB_PORT=$DB_PORT
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./:/app"
