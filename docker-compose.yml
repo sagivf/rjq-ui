@@ -15,7 +15,7 @@ services:
     volumes:
       - ./examples/script:/app/script
     ports:
-      - 12001
+      - $DB_PORT
 
   publisher:
     build:
@@ -32,7 +32,7 @@ services:
     volumes:
       - ./examples/script:/app/script
     ports:
-      - 12001
+      - $DB_PORT
 
   ui:
     build:
