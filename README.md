@@ -24,6 +24,12 @@ Based on:
 1) [install nanobox](https://docs.nanobox.io/install/)'
 2) `nanobox run`, `nanobox run dry-run`, `nanobox remote add app-name`, `nanobox deploy`
 
+## Standalone with db instance(along with creating mocking data) - docker 
+1) Find IP and add change DB_HOST in .env - `sudo ip addr show docker0`
+2) run - `docker-compose up --scale consumer=3 --scale ui=1 --scale publisher=1`
+3) Locate rjq-ui IP - `docker inspect rjqui_ui_1 | grep IPAddress`(:3000) 
+4) Locate RethinkDB admin ui IP - `docker inspect rjqui_ui_1 | grep IPAddress`(:8080) 
+
 ## Development
 
 ### Build setup
