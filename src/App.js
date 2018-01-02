@@ -36,12 +36,10 @@ class App extends Component {
         </AppHeader>
         <WorkingArea>
           <Content>
-            <Router>
-              <div>
-                <Route exact path="/" component={Queues}/>
-                <Route path="/queues/:queue/:status?" component={Queue}/>
-              </div>
-            </Router>
+            <div>
+              <Route exact path="/" component={Queues}/>
+              <Route path="/queues/:queue/:status?" component={Queue}/>
+            </div>
           </Content>
         </WorkingArea>
       </Layout>
