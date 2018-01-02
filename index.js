@@ -12,7 +12,7 @@ const middleware = {
     const app = new Koa()
 
     app.use(rjqMount)
-    app.use(serve(path.join(__dirname, '/public')))
+    app.use(serve(path.join(__dirname, '/build')))
 
     return mount(route, app)
   },
@@ -24,7 +24,7 @@ const middleware = {
     const app = express()
 
     app.use(route, rjqMount)
-    app.use(route, express.static(path.join(__dirname, '/public')))
+    app.use(route, express.static(path.join(__dirname, '/build')))
 
     return app
   }
