@@ -1,6 +1,6 @@
 {
   "name": "rjq-ui",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "RethinkDB Job Queue insights",
   "author": "Sagiv Frankel<sagivf@gmail.com>",
   "license": "MIT",

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Table from 'antd/lib/table';
 import * as moment from 'moment'
+import API from '../config'
 
 const columns = [
   {
@@ -59,7 +60,7 @@ class Queue extends Component {
   fetch() {
     const {queue, status} = this.props.match.params;
 
-    fetch(`http://localhost:4000/rjq-api/queues/${queue}`)
+    fetch(`${API}/queues/${queue}`)
       .then(res => res.json())
       .then(data => !status
         ? data

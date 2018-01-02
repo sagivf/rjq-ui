@@ -32,7 +32,7 @@ class Queues extends Component {
   }
 
   componentWillMount() {
-    fetch(`${API}/rjq-api/queues`)
+    fetch(`${API}/queues`)
       .then(res => res.json())
       .then(data => this.setState({data}))
   }
