@@ -2,7 +2,7 @@ const assert = require('assert')
 const path = require('path')
 
 const middleware = {
-  koa(route, options) {
+  koa (route, options) {
     const Koa = require('koa')
     const serve = require('koa-static')
     const rjqApiKoa = require('rjq-api-koa')
