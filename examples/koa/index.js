@@ -3,7 +3,7 @@ const Koa = require('koa')
 const cors = require('@koa/cors')
 const app = new Koa()
 
-app.use(cors());
+app.use(cors())
 app.use(rjqUI('koa'))
 
 app.use(async ctx => {
