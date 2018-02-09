@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { Layout } from 'antd';
-import './App.css';
+import { Route } from 'react-router-dom'
+import { Layout } from 'antd'
+import './App.css'
 import Queues from './pages/Queues'
 import Queue from './pages/Queue'
 
-const { Header, Content } = Layout;
+const { Header, Content } = Layout
 
 let AppHeader = styled(Header)`
   background: #0f83ea;
@@ -27,23 +27,22 @@ let WorkingArea = styled.div`
 `
 
 class App extends Component {
-
-  render() {
+  render () {
     return (
-      <Layout id="components-layout-demo-basic">
+      <Layout id='components-layout-demo-basic'>
         <AppHeader >
-          <a href="/">RethinkDB Job Queue</a>
+          <a href='/'>RethinkDB Job Queue</a>
         </AppHeader>
         <WorkingArea>
           <Content>
             <div>
-              <Route exact path="/" component={Queues}/>
-              <Route path="/queues/:queue/:status?" component={Queue}/>
+              <Route exact path='/' component={Queues} />
+              <Route path='/queues/:queue/:status?' component={Queue} />
             </div>
           </Content>
         </WorkingArea>
       </Layout>
-    );
+    )
   }
 }
-export default App;
+export default App
