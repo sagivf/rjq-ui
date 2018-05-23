@@ -1,28 +1,28 @@
 import React, { Component } from 'react'
 import Table from 'antd/lib/table'
 import API from '../config'
-// import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const columns = [{
   title: 'Name',
   dataIndex: 'name',
   key: 'name',
-  render: (text, record) => <a href={`queues/${record.name}`}>{text}</a>
+  render: (text, record) => <NavLink to={`queues/${record.name}`}>{text}</NavLink>
 }, {
   title: 'Waiting',
   dataIndex: 'waiting',
   key: 'waiting',
-  render: (text, record) => <a href={`queues/${record.name}/waiting`}>{text}</a>
+  render: (text, record) => <NavLink to={`queues/${record.name}/waiting`}>{text}</NavLink>
 }, {
   title: 'Active',
   dataIndex: 'active',
   key: 'active',
-  render: (text, record) => <a href={`queues/${record.name}/active`}>{text}</a>
+  render: (text, record) => <NavLink to={`queues/${record.name}/active`}>{text}</NavLink>
 }, {
   title: 'Completed',
   dataIndex: 'completed',
   key: 'completed',
-  render: (text, record) => <a href={`queues/${record.name}/completed`}>{text}</a>
+  render: (text, record) => <NavLink to={`queues/${record.name}/completed`}>{text}</NavLink>
 }];
 
 class Queues extends Component {

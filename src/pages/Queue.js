@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Table from 'antd/lib/table';
 import * as moment from 'moment'
 import API from '../config'
+import { NavLink } from 'react-router-dom'
 
 const columns = [
   {
@@ -74,7 +75,7 @@ class Queue extends Component {
     data = data.map(record => Object.assign({ key: record.id}, record))
 
     return <div>
-      <a onClick={() => window.history.back()}>Back</a>
+      <NavLink to={`/`}>Back</NavLink>
       <Table dataSource={data} columns={columns} />
     </div>
   }
