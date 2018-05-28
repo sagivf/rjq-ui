@@ -4,3 +4,20 @@ body {
   font-family: sans-serif;
 }
 
+
+.rjq-mb {
+  margin-bottom: 1rem;
+}
+
+
+.rjq-ml {
+  margin-left: 0.5rem;
+}
+
+.rjq-search {
+  width: 40rem;
+}
+
+.cursor {
+  cursor: pointer;
+}

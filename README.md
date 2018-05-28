@@ -4,6 +4,10 @@
 
 ![https://github.com/grantcarthew/node-rethinkdb-job-queue/wiki](https://sagivf.github.io/rjq-ui/public/static/img/thinkerjoblist.23139a4.png)
 
+## Develop
+
+`npm run start` (data fetch for `.env.development`)
+
 ## Middleware usage
 - [Koa](/examples/koa/index.js)
 - [Express](/examples/express/index.js)
