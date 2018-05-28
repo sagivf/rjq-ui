@@ -45,5 +45,3 @@ yarn serve
 # build for production with minification
 yarn run build
 ```
-
-### Publish
