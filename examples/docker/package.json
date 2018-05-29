@@ -6,6 +6,6 @@
   "author": "Sagiv Frankel",
   "license": "ISC",
   "dependencies": {
-    "rjq-ui": "^6.2.0"
+    "rjq-ui": "^7.0.0"
   }
 }

@@ -43,7 +43,7 @@ if (dbCert) {
   }
 }
 
-app.use(rjqUI('koa', '/', options))
+app.use(rjqUI('koa', options))
 
 const listener = app.listen(port)
 console.info(`Address: ${JSON.stringify(listener.address())}`)
