@@ -4,8 +4,6 @@ const rjqUI = require('../index')
 const program = require('commander')
 const Koa = require('koa')
 
-//const basicAuthentication = require('')
-
 program
   .option('-d, --db-name [value]', '[optional] agenda ui database name')
   .option('-s, --db-host [value]', '[optional] db server host address')

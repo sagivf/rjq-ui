@@ -20,7 +20,7 @@ services:
        - DB_PASSWORD=$DB_PASSWORD
        - DB_PORT=$DB_PORT
     volumes:
-      - ./examples/script:/app/script
+      - ./script:/app/script
     ports:
       - $DB_PORT
 
@@ -37,7 +37,7 @@ services:
        - DB_PASSWORD=$DB_PASSWORD
        - DB_PORT=$DB_PORT
     volumes:
-      - ./examples/script:/app/script
+      - ./script:/app/script
     ports:
       - $DB_PORT
 
@@ -46,7 +46,7 @@ services:
       context: .
     entrypoint:
        - node
-       - /app/bin/www
+       - /app/node_modules/rjq-ui/bin/www
        - -d
        - $DB_NAME
        - -s
@@ -69,3 +69,5 @@ services:
       - "3000:3000"
     volumes:
       - "./:/app"
+      - "/usr/app/node_modules"
+

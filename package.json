@@ -47,6 +47,7 @@
   },
   "devDependencies": {
     "@koa/cors": "^2.2.1",
+    "commander": "^2.15.1",
     "np": "^3.0.1"
   }
 }
