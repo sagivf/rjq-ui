@@ -30,7 +30,8 @@ const middleware = {
   }
 }
 
-module.exports = function (type, route = '/rjq-ui', options) {
+module.exports = function (type, options) {
+  const route = '/rjq-ui'
   assert(type, `missing the middelware type: ${Object.keys(middleware)}`)
   return middleware[type](route, options)
 }

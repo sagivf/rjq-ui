@@ -68,6 +68,6 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - "./:/app"
-      - "/usr/app/node_modules"
+      - ./:/app
+      - /app/node_modules
 
