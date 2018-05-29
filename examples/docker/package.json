@@ -1,10 +1,13 @@
 {
-  "name": "docker",
+  "name": "rjq-ui-docker-example",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Example producer consumer",
   "author": "Sagiv Frankel",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sagivf/rjq-ui.git"
+  },
   "dependencies": {
     "rjq-ui": "^7.0.0"
   }
