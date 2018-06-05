@@ -6,7 +6,9 @@ services:
       context: .
       dockerfile: Dockerfile.rethinkdb
     ports:
-      - '28015:28015'
+      - "38080:8080"
+      - "38015:28015"
+      - "39015:29015"
   consumer:
     build:
       context: .
@@ -23,6 +25,8 @@ services:
       - ./script:/app/script
     ports:
       - $DB_PORT
+    depends_on:
+      - rethinkdb
 
   publisher:
     build:
@@ -40,7 +44,8 @@ services:
       - ./script:/app/script
     ports:
       - $DB_PORT
-
+    depends_on:
+      - rethinkdb
   ui:
     build:
       context: .
@@ -69,5 +74,6 @@ services:
       - "3000:3000"
     volumes:
       - ./:/app
-      - /app/node_modules
-
+      - /app/node_modules"
+    depends_on:
+      - rethinkdb

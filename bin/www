@@ -23,11 +23,11 @@ const options = {}
 
 if (dbName || dbHost || dbPort || dbUser || dbPassword) {
   options.connection = {
-    db: dbName,
-    host: dbHost,
-    port: dbPort,
-    user: dbUser,
-    password: dbPassword
+    db: dbName || undefined,
+    host: dbHost || undefined,
+    port: dbPort || undefined,
+    user: dbUser || undefined,
+    password: dbPassword || undefined
   }
 }
 
@@ -43,7 +43,7 @@ if (dbCert) {
   }
 }
 
-app.use(rjqUI('koa', options))
+app.use(rjqUI('koa', '/', options))
 
 const listener = app.listen(port)
 console.info(`Address: ${JSON.stringify(listener.address())}`)

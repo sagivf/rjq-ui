@@ -28,7 +28,7 @@ const mailOptions = {
 emailQueue.process((job, next) => {
   mailOptions.to = job.to
   mailOptions.text = mailOptions.text.replace('url', job.url)
-  var timeout = Math.random() * 100
+  var timeout = Math.random() * 1000
   console.log('Job processing started with delay:', timeout)
   return nodemailer(mailOptions, timeout).then((info) => {
     console.dir(info)

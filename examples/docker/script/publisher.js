@@ -24,7 +24,7 @@ function requestMailer (timeout) {
 }
 
 (function loop () {
-  const rand = Math.round(Math.random() * (3000)) + 500
+  const rand = Math.round(Math.random() * (1000 * 60 * 10))
   setTimeout(function () {
     console.log('publishing with delay: ', rand)
     requestMailer(rand)
